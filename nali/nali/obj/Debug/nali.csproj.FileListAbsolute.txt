@@ -1,0 +1,8 @@
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\bin\Debug\nali.exe.config
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\bin\Debug\nali.exe
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\bin\Debug\nali.pdb
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\obj\Debug\nali.csproj.AssemblyReference.cache
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\obj\Debug\nali.csproj.SuggestedBindingRedirects.cache
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\obj\Debug\nali.csproj.CoreCompileInputs.cache
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\obj\Debug\nali.exe
+C:\Users\STUDENTS-1212-3\Desktop\Temenuga\nali\nali\obj\Debug\nali.pdb
