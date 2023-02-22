@@ -415,9 +415,11 @@ namespace nali
             }
         }
         #endregion
+        #region MultiPlayerFunctions
         public static void TurnMultiPlayer(char[,] array)
         {
             
         }
+        #endregion
     }
 }
