@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,7 +45,7 @@ namespace nali
                         Console.WriteLine("Vse oshte ne sam go dobavil tova");
                         Console.ReadKey();
                         Console.Clear();
-                        StartGame();
+                        TurnMultiPlayer(array);
                         break;
                     case 3:
                         break;
@@ -413,5 +415,9 @@ namespace nali
             }
         }
         #endregion
+        public static void TurnMultiPlayer(char[,] array)
+        {
+            
+        }
     }
 }
