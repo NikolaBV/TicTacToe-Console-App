@@ -22,10 +22,48 @@ namespace nali
                 { '3', '4', '5' },
                 { '6', '7', '8' }
             };
+            Console.WriteLine("Welcome to Tic Tac Toe!");
+            Console.WriteLine("                                  By Nikola Valkov (trohata)");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1. Singleplayer game");
+            Console.WriteLine("2. MultiPlayer game");
+            Console.WriteLine("3. Exit");
+            try
+            {
+                byte input = byte.Parse(Console.ReadLine());
 
-            Turn(array);
+                switch (input)
+                {
+                    case 1:
+                        Console.Clear();
+                        TurnSinglePlayer(array);
+                        break;
+                    case 2:
+                        Console.WriteLine("Vse oshte ne sam go dobavil tova");
+                        Console.ReadKey();
+                        Console.Clear();
+                        StartGame();
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input, try again");
+                        Console.ReadKey();
+                        Console.Clear();
+                        StartGame();
+                        break;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Invalid input, try again");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+
         }
-
+        #region SinglePlayerFunctions
         public static void GameInstructionsPlayer1(char[,] array, int nomerNaPole)
         {
             switch (nomerNaPole)
@@ -33,55 +71,55 @@ namespace nali
                 case 0:
                     array[0, 0] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 1:
                     array[0, 1] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 2:
                     array[0, 2] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 3:
                     array[1, 0] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 4:
                     array[1, 1] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 5:
                     array[1, 2] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 6:
                     array[2, 0] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 7:
                     array[2, 1] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 8:
                     array[2, 2] = 'x';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
             }
@@ -94,62 +132,66 @@ namespace nali
                 case 0:
                     array[0, 0] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 1:
                     array[0, 1] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 2:
                     array[0, 2] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 3:
                     array[1, 0] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 4:
                     array[1, 1] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 5:
                     array[1, 2] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 6:
                     array[2, 0] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 7:
                     array[2, 1] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
                 case 8:
                     array[2, 2] = 'o';
                     Console.Clear();
-                    Turn(array);
+                    TurnSinglePlayer(array);
                     GameField(array);
                     break;
             }
         }
 
-        public static void Turn(char[,] array)
+        public static void TurnSinglePlayer(char[,] array)
         {
+            Console.WriteLine("|-------------------------|");
+            Console.WriteLine("|    Single Player Game!  |");
+            Console.WriteLine("|-------------------------|");
+            Console.WriteLine();
             HasWon(array);
             GameField(array);
                          
@@ -159,7 +201,6 @@ namespace nali
                 if (!whichPlayer)
                 {
                     Console.Write("Player 1: ");
-                    Console.WriteLine(whichPlayer);
                     nomerNaPole = int.Parse(Console.ReadLine());
                     if (nomerNaPole >= 0 && nomerNaPole <= 8)
                     {
@@ -175,7 +216,6 @@ namespace nali
                 if (whichPlayer == true)
                 {
                     Console.Write("Player 2: ");
-                    Console.WriteLine(whichPlayer);
                     nomerNaPole = int.Parse(Console.ReadLine());
                     if (nomerNaPole >= 0 && nomerNaPole <= 8)
                     {
@@ -193,7 +233,7 @@ namespace nali
                 Console.WriteLine("Greshen input, opitaite pak");
                 Console.ReadKey();
                 Console.Clear();
-                Turn(array);
+                TurnSinglePlayer(array);
             }
             
         }
@@ -371,5 +411,6 @@ namespace nali
                 Console.WriteLine();
             }
         }
+        #endregion
     }
 }
