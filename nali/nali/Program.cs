@@ -154,38 +154,48 @@ namespace nali
             GameField(array);
                          
             int nomerNaPole;
-
-            if (!whichPlayer)
+            try
             {
-                Console.Write("Player 1: ");
-                Console.WriteLine(whichPlayer);
-                nomerNaPole = int.Parse(Console.ReadLine());
-                if (nomerNaPole >= 0 && nomerNaPole <= 8)
+                if (!whichPlayer)
                 {
-                    whichPlayer ^= true;
-                    GameInstructionsPlayer1(array, nomerNaPole);
-                    
+                    Console.Write("Player 1: ");
+                    Console.WriteLine(whichPlayer);
+                    nomerNaPole = int.Parse(Console.ReadLine());
+                    if (nomerNaPole >= 0 && nomerNaPole <= 8)
+                    {
+                        whichPlayer ^= true;
+                        GameInstructionsPlayer1(array, nomerNaPole);
+
+                    }
+                    else
+                    {
+                        Console.Write("yok");
+                    }
                 }
-                else
+                if (whichPlayer == true)
                 {
-                    Console.Write("yok");
+                    Console.Write("Player 2: ");
+                    Console.WriteLine(whichPlayer);
+                    nomerNaPole = int.Parse(Console.ReadLine());
+                    if (nomerNaPole >= 0 && nomerNaPole <= 8)
+                    {
+                        whichPlayer = false;
+                        GameInstructionsPlayer2(array, nomerNaPole);
+                    }
+                    else
+                    {
+                        Console.WriteLine("yok");
+                    }
                 }
             }
-            if(whichPlayer == true)
+            catch
             {
-                Console.Write("Player 2: ");
-                Console.WriteLine(whichPlayer);
-                nomerNaPole = int.Parse(Console.ReadLine());
-                if (nomerNaPole >= 0 && nomerNaPole <= 8)
-                {
-                    whichPlayer = false;
-                    GameInstructionsPlayer2(array, nomerNaPole);
-                }
-                else
-                {
-                    Console.WriteLine("yok");
-                }
-            }           
+                Console.WriteLine("Greshen input, opitaite pak");
+                Console.ReadKey();
+                Console.Clear();
+                Turn(array);
+            }
+            
         }
 
         public static void HasWon(char[,] array)
