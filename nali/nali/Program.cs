@@ -8,6 +8,7 @@ namespace nali
 {
     internal class Program
     {
+        public static bool whichPlayer;
         static void Main(string[] args)
         {
             StartGame();
@@ -150,34 +151,34 @@ namespace nali
         {
             HasWon(array);
             GameField(array);
-            int whichPlayer = 1;             
+                         
             int nomerNaPole;
 
-            if (whichPlayer % 2 != 0)
+            if (!whichPlayer)
             {
                 Console.Write("Player 1: ");
                 Console.WriteLine(whichPlayer);
                 nomerNaPole = int.Parse(Console.ReadLine());
                 if (nomerNaPole >= 0 && nomerNaPole <= 8)
-                {                 
+                {
+                    whichPlayer ^= true;
                     GameInstructionsPlayer1(array, nomerNaPole);
-                    whichPlayer++;
+                    
                 }
                 else
                 {
                     Console.Write("yok");
                 }
             }
-            if(whichPlayer % 2 == 0)
+            if(whichPlayer == true)
             {
                 Console.Write("Player 2: ");
-                Console.WriteLine("Which player var:{0}",whichPlayer);
-
+                Console.WriteLine(whichPlayer);
                 nomerNaPole = int.Parse(Console.ReadLine());
                 if (nomerNaPole >= 0 && nomerNaPole <= 8)
                 {
+                    whichPlayer = false;
                     GameInstructionsPlayer2(array, nomerNaPole);
-                    whichPlayer++;
                 }
                 else
                 {
@@ -265,6 +266,81 @@ namespace nali
                 StartGame();
             }
             //Player 2
+            if (array[0, 0] == 'o' && array[0, 1] == 'o' && array[0, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[1, 0] == 'o' && array[1, 1] == 'o' && array[1, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[2, 0] == 'o' && array[2, 1] == 'o' && array[2, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            //Vertical Wins
+            if (array[0, 0] == 'o' && array[1, 0] == 'o' && array[2, 0] == '0')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[0, 1] == 'o' && array[1, 1] == 'o' && array[2, 1] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[0, 2] == 'o' && array[1, 2] == 'o' && array[2, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            //Diagonal Wins
+            if (array[0, 0] == 'o' && array[1, 1] == 'o' && array[2, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[0, 0] == 'o' && array[1, 1] == 'o' && array[2, 2] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            if (array[0, 2] == 'o' && array[1, 1] == 'o' && array[2, 0] == 'o')
+            {
+                Console.WriteLine("Player two has won!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
+            
         }
 
         public static void GameField(char[,] array)
