@@ -9,6 +9,7 @@ namespace nali
     internal class Program
     {
         public static bool whichPlayer;
+
         static void Main(string[] args)
         {
             StartGame();
@@ -190,7 +191,6 @@ namespace nali
         public static void HasWon(char[,] array)
         {
             //Horizontal Wins
-
             if (array[0, 0] == 'x' && array[0, 1] == 'x' && array[0, 2] == 'x')
             {
                 Console.WriteLine("Player one has won!");
@@ -340,7 +340,14 @@ namespace nali
                 Console.Clear();
                 StartGame();
             }
-            
+            else if (array[0,0] != '0' && array[0, 1] != '1' && array[0, 2] != '2' && array[1, 0] != '3' && array[1, 1] != '4' && array[1, 2] != '5' && array[2, 0] != '6' && array[2, 1] != '7' && array[2, 2] != '8')
+            {
+                Console.WriteLine("There has been a draw!");
+                Console.WriteLine("Press any button");
+                Console.ReadKey();
+                Console.Clear();
+                StartGame();
+            }
         }
 
         public static void GameField(char[,] array)
