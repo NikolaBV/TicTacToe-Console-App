@@ -5,12 +5,15 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using nali;
+using System.Threading;
 
 namespace nali
 {
-    internal class Program
+    public class Program
     {
         public static bool whichPlayer;
+        public static bool GameOver = false;
 
         static void Main(string[] args)
         {
@@ -27,8 +30,8 @@ namespace nali
             Console.WriteLine("Welcome to Tic Tac Toe!");
             Console.WriteLine("                                  By Nikola Valkov (trohata)");
             Console.WriteLine("Menu: ");
-            Console.WriteLine("1. Singleplayer game");
-            Console.WriteLine("2. MultiPlayer game");
+            Console.WriteLine("1. Local Multiplayer game");
+            Console.WriteLine("2. Online MultiPlayer game");
             Console.WriteLine("3. Exit");
             try
             {
@@ -39,13 +42,10 @@ namespace nali
                 {
                     case 1:
                         Console.Clear();
-                        TurnSinglePlayer(array);
+                        TurnLocalMultiplayer(array);
                         break;
                     case 2:
-                        Console.WriteLine("Vse oshte ne sam go dobavil tova");
-                        Console.ReadKey();
-                        Console.Clear();
-                        TurnMultiPlayer(array);
+                        ChatTest();
                         break;
                     case 3:
                         break;
@@ -66,7 +66,7 @@ namespace nali
             }
 
         }
-        #region SinglePlayerFunctions
+        #region LocalMultiplayerFunctions
         public static void GameInstructionsPlayer1(char[,] array, int nomerNaPole)
         {
             switch (nomerNaPole)
@@ -74,55 +74,55 @@ namespace nali
                 case 0:
                     array[0, 0] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 1:
                     array[0, 1] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 2:
                     array[0, 2] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 3:
                     array[1, 0] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 4:
                     array[1, 1] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 5:
                     array[1, 2] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 6:
                     array[2, 0] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 7:
                     array[2, 1] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 8:
                     array[2, 2] = 'x';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
             }
@@ -135,61 +135,61 @@ namespace nali
                 case 0:
                     array[0, 0] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 1:
                     array[0, 1] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 2:
                     array[0, 2] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 3:
                     array[1, 0] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 4:
                     array[1, 1] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 5:
                     array[1, 2] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 6:
                     array[2, 0] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 7:
                     array[2, 1] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
                 case 8:
                     array[2, 2] = 'o';
                     Console.Clear();
-                    TurnSinglePlayer(array);
+                    TurnLocalMultiplayer(array);
                     GameField(array);
                     break;
             }
         }
 
-        public static void TurnSinglePlayer(char[,] array)
+        public static void TurnLocalMultiplayer(char[,] array)
         {
             Console.WriteLine("|-------------------------|");
             Console.WriteLine("|    Single Player Game!  |");
@@ -197,7 +197,7 @@ namespace nali
             Console.WriteLine();
             HasWon(array);
             GameField(array);
-                         
+
             int nomerNaPole;
             try
             {
@@ -236,9 +236,9 @@ namespace nali
                 Console.WriteLine("Greshen input, opitaite pak");
                 Console.ReadKey();
                 Console.Clear();
-                TurnSinglePlayer(array);
+                TurnLocalMultiplayer(array);
             }
-            
+
         }
 
         public static void HasWon(char[,] array)
@@ -393,7 +393,7 @@ namespace nali
                 Console.Clear();
                 StartGame();
             }
-            else if (array[0,0] != '0' && array[0, 1] != '1' && array[0, 2] != '2' && array[1, 0] != '3' && array[1, 1] != '4' && array[1, 2] != '5' && array[2, 0] != '6' && array[2, 1] != '7' && array[2, 2] != '8')
+            else if (array[0, 0] != '0' && array[0, 1] != '1' && array[0, 2] != '2' && array[1, 0] != '3' && array[1, 1] != '4' && array[1, 2] != '5' && array[2, 0] != '6' && array[2, 1] != '7' && array[2, 2] != '8')
             {
                 Console.WriteLine("There has been a draw!");
                 Console.WriteLine("Press any button");
@@ -415,11 +415,79 @@ namespace nali
             }
         }
         #endregion
-        #region MultiPlayerFunctions
-        public static void TurnMultiPlayer(char[,] array)
+        #region OnlineMultiPlayerFunctions
+        public static void ChatTest()
         {
-            
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter the IP address of the chat server: ");
+            string ipAddress = Console.ReadLine();
+
+            Console.Write("Enter the port number of the chat server: ");
+            int port = int.Parse(Console.ReadLine());
+
+            try
+            {
+                TcpClient client = new TcpClient(ipAddress, port);
+                NetworkStream stream = client.GetStream();
+
+                byte[] nameData = Encoding.UTF8.GetBytes(name);
+                stream.Write(nameData, 0, nameData.Length);
+
+                Console.WriteLine($"Connected to chat server at {ipAddress}:{port}");
+
+                // Start a thread to receive messages from the server
+                var receiveThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        try
+                        {
+                            byte[] buffer = new byte[4096];
+                            int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                            if (bytesRead > 0)
+                            {
+                                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                                Console.WriteLine(message);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error receiving message: {ex.Message}");
+                            break;
+                        }
+                    }
+                });
+                receiveThread.Start();
+
+                // Send messages to the server
+                while (true)
+                {
+                    string input = Console.ReadLine();
+                    if (!string.IsNullOrEmpty(input))
+                    {
+                        try
+                        {
+                            byte[] inputData = Encoding.UTF8.GetBytes(input);
+                            stream.Write(inputData, 0, inputData.Length);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error sending message: {ex.Message}");
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error connecting to chat server: {ex.Message}");
+            }
         }
         #endregion
+
     }
+
+
 }

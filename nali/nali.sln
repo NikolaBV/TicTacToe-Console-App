@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nali", "nali\nali.csproj", "{744AED1F-6206-4FFC-8FD6-E051C86DF827}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{44635BEA-ED5A-444B-8658-C026746C5A5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{744AED1F-6206-4FFC-8FD6-E051C86DF827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{744AED1F-6206-4FFC-8FD6-E051C86DF827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{744AED1F-6206-4FFC-8FD6-E051C86DF827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44635BEA-ED5A-444B-8658-C026746C5A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44635BEA-ED5A-444B-8658-C026746C5A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44635BEA-ED5A-444B-8658-C026746C5A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44635BEA-ED5A-444B-8658-C026746C5A5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

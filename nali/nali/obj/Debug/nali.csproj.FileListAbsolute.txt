@@ -14,3 +14,11 @@ C:\Users\STUDENTS-STEM-18\Desktop\12a\Nikola\TicTacToe-Console-App\nali\nali\obj
 C:\Users\STUDENTS-STEM-18\Desktop\12a\Nikola\TicTacToe-Console-App\nali\nali\obj\Debug\nali.csproj.CoreCompileInputs.cache
 C:\Users\STUDENTS-STEM-18\Desktop\12a\Nikola\TicTacToe-Console-App\nali\nali\obj\Debug\nali.exe
 C:\Users\STUDENTS-STEM-18\Desktop\12a\Nikola\TicTacToe-Console-App\nali\nali\obj\Debug\nali.pdb
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\obj\Debug\nali.csproj.AssemblyReference.cache
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\obj\Debug\nali.csproj.SuggestedBindingRedirects.cache
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\obj\Debug\nali.csproj.CoreCompileInputs.cache
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\obj\Debug\nali.exe
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\obj\Debug\nali.pdb
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\bin\Debug\nali.exe.config
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\bin\Debug\nali.exe
+E:\Program Files (x86)\TicTacToe-Console-App\nali\nali\bin\Debug\nali.pdb
